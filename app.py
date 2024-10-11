@@ -4,7 +4,7 @@ import os
 import pandas as pd
 
 app = Flask(__name__)
-app.secret_key = 'supersecretkey'  # Use a strong secret key
+app.secret_key = os.getenv("SECRET_KEY")
 
 # Load users from JSON
 try:
