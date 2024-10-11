@@ -1,10 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for, session
+from flask_wtf import CSRFProtect
 import json
 import os
 import pandas as pd
 
 app = Flask(__name__)
+
+# Secret key for CSRF protection (make sure it's set as an environment variable in PythonAnywhere)
 app.secret_key = os.getenv("SECRET_KEY")
+
+# Enable CSRF protection globally for the app
+csrf = CSRFProtect(app)
 
 # Load users from JSON
 try:
@@ -212,7 +218,21 @@ def annotate(poem_url):
             recommendation_texts[rec] = "Error: Poema no encontrado en el mapeo."
 
     if request.method == 'POST':
-        labels = {rec: request.form[rec] for rec in recommendations}
+        labels = {rec: request.form.get(rec) for rec in recommendations}
+        # Ensure all recommendations have a value before submitting
+        if None in labels.values():
+            return render_template(
+                'annotate.html',
+                author=author_formatted,
+                original_title=original_title,
+                poem_text=poem_text,
+                poem=poem_key,
+                recommendations=recommendations,
+                recommendation_texts=recommendation_texts,
+                title_mapping=title_mapping,
+                error="Por favor, selecciona una opción para todos los poemas recomendados."
+            )
+        
         annotation = {
             'user': session['username'],
             'poem': poem_key,
@@ -238,3 +258,4 @@ def annotate(poem_url):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
