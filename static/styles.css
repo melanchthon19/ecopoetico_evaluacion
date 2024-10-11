@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container-fluid {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.left-panel {
+    width: 40%;
+    padding: 20px;
+    border-right: 2px solid #ccc;
+    background-color: #f8f9fa;
+    position: fixed;
+    height: 90%;
+    overflow-y: auto;
+}
+
+.right-panel {
+    margin-left: 40%;
+    width: 60%;
+    padding: 20px;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.recommendation-container {
+    height: 100%;
+    overflow-y: auto;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+select {
+    margin-bottom: 20px;
+}
+
+.submit-button {
+    margin-top: 20px;
+}
+
+/* Login container styling */
+.login-container {
+    max-width: 400px; /* Set the width of the login form */
+    margin: 50px auto; /* Center the form and add some margin at the top */
+    padding: 20px;
+    background-color: #f8f9fa; /* Optional: Add a light background */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+hr {
+    border-top: 1px solid #ccc; /* Ensure a visible line */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

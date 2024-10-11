@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anotar: {{ author }} - {{ original_title }}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap -->
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"> <!-- Custom CSS -->
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <p><br>Evalúa siguiendo este escenario: <b>Una persona te dice que le gustó el poema de la izquierda, ¿le recomiendas el de la derecha?</b></p>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            
+
+            <!-- Right-side links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <form method="POST" onsubmit="return validateForm()"> <!-- Attach validation function -->
+                        <button type="submit" class="btn btn-primary nav-link" style="color: white;">Enviar anotaciones</button>
+                    </form>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('instructions') }}">Instrucciones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <!-- Panel izquierdo (poema base) -->
+        <div class="left-panel">
+            <h3>{{ author }} - {{ original_title }}</h3> <!-- Author and Title displayed properly -->
+            <pre>{{ poem_text }}</pre>
+            <hr class="my-3">
+        </div>
+
+        <!-- Panel derecho (poemas recomendados) -->
+        <div class="right-panel">
+            <div class="recommendation-container">
+                {% for rec, rec_text in recommendation_texts.items() %}
+                    {% set rec_author, rec_formatted_title = rec.split('/') %}
+                    {% set rec_original_title = title_mapping[rec_formatted_title.replace('.pt', '.txt')] %}
+                    <h3>{{ rec_author|replace('-', ' ')|title }} - {{ rec_original_title }}</h3>
+                    <pre>{{ rec_text }}</pre>
+                    <label for="{{ rec }}">¿Recomiendo este poema?</label>
+                    <select name="{{ rec }}" id="{{ rec }}">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="3">Sí lo recomiendo</option>
+                        <option value="2">Neutral/Indiferente</option>
+                        <option value="1">No lo recomendado</option>
+                    </select>
+                    <hr class="my-4">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Include the validation JS from static folder -->
+    <script src="{{ url_for('static', filename='js/form_validation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/page_warning.js') }}"></script>
+
+</body>
+</html>

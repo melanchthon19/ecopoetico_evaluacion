@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron">
+    <img src="{{ url_for('static', filename='img/ecopoetico.png') }}" alt="EcoPoetico Logo" class="img-fluid mb-4">
+    <h1 class="display-4">Bienvenido a la plataforma de anotación.</h1>
+    <p class="lead">Aquí podrás evaluar el sistema de recomendación utilizado en la plataforma <a href="http://www.ecopoetico.cl" target="_blank">www.ecopoetico.cl</a></p>
+    <hr class="my-4">
+    <p>Ingresa a la plataforma para comenzar a anotar.</p>
+    
+    {% if session['username'] %}
+        <a class="btn btn-primary btn-lg" href="{{ url_for('instructions') }}" role="button">Ir a Instrucciones</a>
+    {% else %}
+        <a class="btn btn-primary btn-lg" href="{{ url_for('login') }}" role="button">Login</a>
+    {% endif %}
+</div>
+{% endblock %}
