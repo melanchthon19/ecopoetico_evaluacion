@@ -1,0 +1,18 @@
+[
+    {
+        "user": "usuario",
+        "poem": "andres-eloy-blanco/la-orbita-del-agua.pt",
+        "labels": {
+            "pedro-mir/andante.pt": "3",
+            "federico-garcia-lorca/los-alamos-de-plata.pt": "3",
+            "robert-browning/prospice.pt": "3",
+            "nicanor-parra/cronos.pt": "2",
+            "claudio-rodriguez/con-los-cinco-pinares-de-tu-muerte-y-la-mia.pt": "2",
+            "charles-baudelaire/la-muerte-de-los-pobres.pt": "3",
+            "andres-eloy-blanco/angostura.pt": "2",
+            "jose-agustin-goytisolo/es-una-historia-conocida-amigos.pt": "3",
+            "leopoldo-panero/la-melancolia.pt": "3",
+            "robert-desnos/como-una-mano-que-en-el-instante-de-la-muerte-y-del-naufragio.pt": "3"
+        }
+    }
+]

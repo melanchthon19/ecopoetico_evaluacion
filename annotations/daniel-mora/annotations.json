@@ -1,0 +1,162 @@
+[
+    {
+        "user": "daniel-mora",
+        "poem": "nicanor-parra/sueno-con-una-mesa-y-una-silla.pt",
+        "labels": {
+            "concha-mendez/la-pescadora.pt": "1",
+            "francisco-luis-bernardez/cielo-y-rio.pt": "1",
+            "charles-bukowski/aire-luz-tiempo-y-espacio.pt": "3",
+            "jose-angel-valente/la-lluvia.pt": "1",
+            "concha-mendez/en-una-tarde-como-tantas-tardes.pt": "2",
+            "dulce-maria-loynaz/canto-a-la-mujer-esteril.pt": "2",
+            "alfonso-costafreda/el-silencio.pt": "2",
+            "samuel-beckett/bebe-solo.pt": "1",
+            "horacio/ay-ay-postumo-postumo.pt": "2",
+            "ramon-de-campoamor/a-ruben-dario.pt": "1"
+        }
+    },
+    {
+        "user": "daniel-mora",
+        "poem": "alfonsina-storni/y-tu.pt",
+        "labels": {
+            "walt-whitman/no-me-cierren-sus-puertas.pt": "2",
+            "jose-angel-buesa/poema-del-olvido.pt": "3",
+            "manuel-altolaguirre/cerrando-los-ojos.pt": "2",
+            "federico-garcia-lorca/la-sombra-de-mi-alma.pt": "3",
+            "delmira-agustini/los-cuervos-negros-sufren-hambre-de-carne-rosa.pt": "1",
+            "gustavo-adolfo-becquer/rima-vii-del-salon-en-el-angulo-oscuro.pt": "1",
+            "gabriel-bocangel/yo-cantare-de-amor-tan-dulcemente.pt": "2",
+            "nicolas-guillen/sigue.pt": "3",
+            "cesar-vallejo/yeso.pt": "2",
+            "emilio-prados/alba-rapida.pt": "1"
+        }
+    },
+    {
+        "user": "daniel-mora",
+        "poem": "francisco-brines/la-piedad-del-tiempo.pt",
+        "labels": {
+            "pedro-lastra/alguien-llama-a-la-puerta-y-luego-sigue-ahi.pt": "2",
+            "dulce-maria-loynaz/el-remanso.pt": "1",
+            "luis-munoz-rivera/aceptareis-patriotas-inerte-vuestra-mano.pt": "1",
+            "emilio-prados/yo-no-queria.pt": "2",
+            "alfonsina-storni/senor-senor-hace-ya-tiempo-un-dia.pt": "1",
+            "carlos-pellicer/la-bandera-mexicana.pt": "1",
+            "fernando-pessoa/ah-ese-frescor-en-la-cara-de-no-cumplir-un-deber.pt": "2",
+            "concha-mendez/ven-a-mi-que-vas-herido.pt": "2",
+            "gabriel-bocangel/lloro-filis-mas-es-sin-apariencia.pt": "1",
+            "paul-verlaine/mi-sueno.pt": "3"
+        }
+    },
+    {
+        "user": "daniel-mora",
+        "poem": "edgar-allan-poe/los-espiritus-de-los-muertos.pt",
+        "labels": {
+            "octavio-paz/el-grito-el-pico-el-diente-los-aullidos.pt": "1",
+            "damaso-alonso/no-se-solo-me-llega-en-el-venero.pt": "2",
+            "manuel-ortiz-guerrero/delirio-de-pizzicatos.pt": "3",
+            "sor-juana-ines-de-la-cruz/alaba-en-el-padre-baltasar-de-mansilla-de-la-compania-de-jesus-gran-predicador-y-confesor-de-la-senora-virreina-tanta-sabiduria-como-modestia.pt": "1",
+            "francisco-de-quevedo/a-aminta-que-imite-al-sol-al-dejarle-consuelo-cuando-se-ausenta.pt": "2",
+            "marguerite-yourcenar/en-el-umbral-de-una-puerta-oscura.pt": "3",
+            "gloria-fuertes/no-perdamos-el-tiempo.pt": "1",
+            "heinrich-heine/en-su-amor-la-mariposa.pt": "1",
+            "fray-luis-de-leon/oda-ii-a-don-pedro-portocarrero.pt": "1",
+            "blanca-varela/juego-amoroso.pt": "1"
+        }
+    },
+    {
+        "user": "daniel-mora",
+        "poem": "charles-bukowski/este-viernes-por-la-noche.pt",
+        "labels": {
+            "jose-saramago/laberinto.pt": "2",
+            "tristan-corbiere/l-que-altivo-silbaba-su-tonada-en-falsete.pt": "1",
+            "gabriel-bocangel/grandes-los-ojos-son-la-vista-breve.pt": "2",
+            "carmen-conde/los-molinos-de-velas.pt": "3",
+            "juan-antonio-corretjer/camino.pt": "3",
+            "jose-angel-valente/el-sur.pt": "1",
+            "francisco-villaespesa/celos.pt": "2",
+            "dylan-thomas/en-mi-oficio-o-mi-arte-sombrio.pt": "1",
+            "john-donne/lo-que-el-tiempo-y-la-ausencia-demuestran-mas-bien-ayuda-a-que-el-amor-duela.pt": "1",
+            "john-milton/tres-anos-ya-mis-ojos-que-se-abrieron.pt": "1"
+        }
+    },
+    {
+        "user": "daniel-mora",
+        "poem": "sor-juana-ines-de-la-cruz/soneto-xx.pt",
+        "labels": {
+            "yevgueni-yevtushenko/heridas.pt": "3",
+            "jose-angel-buesa/aniversario.pt": "1",
+            "safo/himno-en-honor-a-afrodita.pt": "1",
+            "jorge-luis-borges/mas-alla-de-los-simbolos.pt": "1",
+            "jose-hierro/respuesta.pt": "1",
+            "jose-angel-buesa/el-clavel-seco.pt": "2",
+            "luis-pales-matos/rabi-jeschona-de-nazaret.pt": "1",
+            "leon-felipe/aqui-vino.pt": "1",
+            "jose-angel-buesa/monologo-de-casanova.pt": "1",
+            "idea-vilarino/todo-es-muy-simple.pt": "2"
+        }
+    },
+    {
+        "user": "daniel-mora",
+        "poem": "jorge-luis-borges/las-cosas.pt",
+        "labels": {
+            "julia-de-burgos/alta-mar-y-gaviota.pt": "1",
+            "vicente-gerbasi/madrugada.pt": "1",
+            "alfonso-costafreda/las-pequenas-palabras.pt": "2",
+            "jose-marti/versos-sencillos-xviii.pt": "1",
+            "luis-munoz-rivera/que-cante-yo-al-amor-en-otros-dias.pt": "3",
+            "silvina-ocampo/presentimiento.pt": "1",
+            "ruben-dario/la-gitanilla.pt": "1",
+            "dante-gabriel-rossetti/sueno-nupcial.pt": "2",
+            "juan-ramon-jimenez/primavera.pt": "2",
+            "gonzalo-de-berceo/milagros-de-nuestra-senora-xiii-el-nuevo-obispo-de-pavia.pt": "1"
+        }
+    },
+    {
+        "user": "daniel-mora",
+        "poem": "mario-benedetti/porque-te-tengo-y-no.pt",
+        "labels": {
+            "jorge-carrera-andrade/cuaderno-de-un-paracaidista.pt": "1",
+            "evaristo-ribera-chevremont/el-patio.pt": "2",
+            "gabriel-celaya/cerca-y-lejos.pt": "3",
+            "vicente-huidobro/alerta.pt": "1",
+            "alexandr-puchkin/del-cefiro-nocturno.pt": "1",
+            "emilio-ballagas/cancion-sin-tiempo-i.pt": "2",
+            "jose-de-diego/cosas-divinas.pt": "1",
+            "jose-angel-valente/estabas-desleida-en-la-dulzura.pt": "3",
+            "idea-vilarino/de-todas-partes-vienen.pt": "2",
+            "dionisio-ridruejo/espana-toda-aqui-lejana-y-mia.pt": "1"
+        }
+    },
+    {
+        "user": "daniel-mora",
+        "poem": "walt-whitman/oh-capitan-mi-capitan.pt",
+        "labels": {
+            "wang-wei/el-sendero-de-la-montana.pt": "2",
+            "jose-santos-chocano/la-cruz-yace-sobre-el-polvo-duerme-el-templo-en-los-altares.pt": "2",
+            "federico-garcia-lorca/el-concierto-interrumpido.pt": "2",
+            "miguel-de-unamuno/el-cuerpo-canta.pt": "1",
+            "gertrudis-gomez-de-avellaneda/el-recuerdo-importuno.pt": "1",
+            "ramon-del-valle-inclan/que-linda-es-la-duena-que-hermoso-gracejo.pt": "1",
+            "francisco-brines/se-me-ha-quemado-el-pecho-como-un-horno.pt": "1",
+            "charles-bukowski/a-cada-rato-vuelve.pt": "1",
+            "manuel-del-cabral/letra.pt": "1",
+            "alejandro-tapia-y-rivera/los-ojos-de.pt": "2"
+        }
+    },
+    {
+        "user": "daniel-mora",
+        "poem": "julia-de-burgos/poema-de-la-intima-agonia.pt",
+        "labels": {
+            "jose-saramago/intimidad.pt": "3",
+            "sor-juana-ines-de-la-cruz/soneto-a-martin-de-olivas.pt": "1",
+            "jose-gautier-benitez/romance-ii.pt": "3",
+            "jose-gautier-benitez/sone-que-la-mujer-a-quien-adoro.pt": "3",
+            "vicente-huidobro/el-celebre-oceano.pt": "2",
+            "gabriel-bocangel/hoy-norona-el-sangriento-rey-de-fieras.pt": "1",
+            "salvador-novo/ultrapiojo-archiliendre-multichinche.pt": "1",
+            "leopoldo-lugones/oceanida.pt": "1",
+            "cecilia-meireles/desde-lejos-te-he-de-amar.pt": "3",
+            "alfonsina-storni/viaje-finido.pt": "3"
+        }
+    }
+]

@@ -1,0 +1,162 @@
+[
+    {
+        "user": "constanza-lopez",
+        "poem": "nicanor-parra/sueno-con-una-mesa-y-una-silla.pt",
+        "labels": {
+            "nicolas-guillen/adivinanzas.pt": "2",
+            "nicolas-guillen/pregon.pt": "1",
+            "gloria-fuertes/soy-alta.pt": "3",
+            "mario-benedetti/tactica-y-estrategia.pt": "1",
+            "mario-benedetti/viceversa.pt": "3",
+            "alain-bosquet/fechorias-del-verbo.pt": "3",
+            "fernando-pessoa/magnificat.pt": "3",
+            "pablo-de-rokha/aventurero.pt": "2",
+            "allen-ginsberg/tema-objetivo.pt": "3",
+            "herib-campos-cervera/elegire-una-piedra.pt": "1"
+        }
+    },
+    {
+        "user": "constanza-lopez",
+        "poem": "alfonsina-storni/y-tu.pt",
+        "labels": {
+            "guadalupe-pita-amor/te-veo-por-los-tejados.pt": "3",
+            "amado-nervo/ignoro-que-corriente-de-ascetismo.pt": "3",
+            "clara-lair/nocturnos-de-nueva-york-iii.pt": "3",
+            "carlos-pellicer/nadie-llego-hasta-mi-con-este-paso.pt": "3",
+            "dionisio-ridruejo/el-recto-andar-del-agua-prisionera.pt": "3",
+            "julio-florez/eres-un-imposible-una-quimera.pt": "2",
+            "leopoldo-panero/madrigal-lento.pt": "2",
+            "maria-victoria-atencia/la-concertada-cita-entre-desconocidos.pt": "2",
+            "delmira-agustini/tu-amor.pt": "2",
+            "vicente-gerbasi/bosque-de-musica.pt": "3"
+        }
+    },
+    {
+        "user": "constanza-lopez",
+        "poem": "francisco-brines/la-piedad-del-tiempo.pt",
+        "labels": {
+            "pedro-lastra/viola-damore.pt": "3",
+            "jose-manuel-caballero-bonald/musica-de-fondo.pt": "1",
+            "luis-cernuda/no-decia-palabras.pt": "3",
+            "francisco-brines/rubores-rostros-movimientos-cuerpos.pt": "3",
+            "jose-manuel-caballero-bonald/todas-las-noches-dejo.pt": "3",
+            "olga-orozco/he-visto-a-la-dicha-perderse-gritando-por-un-umbrio-y.pt": "3",
+            "xavier-villaurrutia/nocturno-miedo.pt": "3",
+            "jorge-luis-borges/mirar-el-rio-hecho-de-tiempo-y-agua.pt": "3",
+            "guadalupe-pita-amor/me-envuelve-el-polvo-y-me-inquieta.pt": "3",
+            "jorge-luis-borges/edipo-y-el-enigma.pt": "3"
+        }
+    },
+    {
+        "user": "constanza-lopez",
+        "poem": "edgar-allan-poe/los-espiritus-de-los-muertos.pt",
+        "labels": {
+            "edgar-allan-poe/espiritus-de-la-noche.pt": "3",
+            "novalis/tiene-que-volver-siempre-la-manana.pt": "3",
+            "edgar-allan-poe/al-rio.pt": "3",
+            "leopoldo-panero/la-melancolia.pt": "3",
+            "emily-bronte/no-es-de-cobarde-mi-alma.pt": "3",
+            "charles-baudelaire/la-muerte-de-los-pobres.pt": "3",
+            "dante-gabriel-rossetti/el-alma-de-la-belleza.pt": "3",
+            "francisco-luis-bernardez/juan-ramon-jimenez.pt": "1",
+            "claudio-rodriguez/siempre-la-claridad-viene-del-cielo.pt": "2",
+            "robert-bridges/mi-deleite-y-tu-deleite.pt": "2"
+        }
+    },
+    {
+        "user": "constanza-lopez",
+        "poem": "charles-bukowski/este-viernes-por-la-noche.pt",
+        "labels": {
+            "charles-bukowski/cerveza.pt": "3",
+            "nicanor-parra/cronos.pt": "2",
+            "allen-ginsberg/a-un-viejo-poeta-en-el-peru.pt": "3",
+            "nicanor-parra/una-doncella-rubia-se-enamora.pt": "3",
+            "charles-bukowski/si-consideramos-lo-que-puede-verse.pt": "3",
+            "pablo-antonio-cuadra/el-indio-y-el-violin.pt": "2",
+            "ernesto-cardenal/vi-hace-muchos-anos-desde-un-bus-en-virginia-o-alabama.pt": "3",
+            "charles-bukowski/bueno-ellos-ya-decian-que-llegaria.pt": "3",
+            "paul-eluard/se-abren-puertas-se-descubren-ventanas.pt": "2",
+            "edgar-allan-poe/hace-muchos-muchos-anos.pt": "3"
+        }
+    },
+    {
+        "user": "constanza-lopez",
+        "poem": "sor-juana-ines-de-la-cruz/soneto-xx.pt",
+        "labels": {
+            "lupercio-leonardo-de-argensola/si-acaso-de-la-frente-galatea.pt": "3",
+            "victoria-colonna/si-un-pequeno-monton-de-tierra-guarda.pt": "3",
+            "gabriel-bocangel/como-en-estancia-que-de-marmol-fino.pt": "3",
+            "juan-melendez-valdes/viendo-el-amor-un-dia.pt": "3",
+            "gabriel-bocangel/gerardo-quien-su-engano-repetido.pt": "3",
+            "pedro-calderon-de-la-barca/que-genero-de-ardor-es-el-que-llego.pt": "3",
+            "lupercio-leonardo-de-argensola/yo-vivo-de-un-engano-y-otro-engano.pt": "3",
+            "bartolome-leonardo-de-argensola/de-la-union-silvio-con-que-amor-prospera.pt": "3",
+            "gabriel-bocangel/que-importa-al-mongibelo-estar-nevado.pt": "3",
+            "lupercio-leonardo-de-argensola/conoce-apenas-al-amor-por-fama.pt": "3"
+        }
+    },
+    {
+        "user": "constanza-lopez",
+        "poem": "jorge-luis-borges/las-cosas.pt",
+        "labels": {
+            "jose-manuel-caballero-bonald/todas-las-noches-dejo.pt": "3",
+            "carmen-conde/las-miradas-son-arboles-que-se-deshojan.pt": "3",
+            "maria-victoria-atencia/la-rueda.pt": "3",
+            "alfonso-reyes/morir.pt": "3",
+            "theophile-gautier/en-la-noche.pt": "3",
+            "charles-baudelaire/puesta-de-sol-romantica.pt": "2",
+            "rainer-maria-rilke/un-dia-tome-entre-mis-manos.pt": "2",
+            "julio-herrera-y-reissig/frio-frio-frio.pt": "3",
+            "ida-vitale/jardin-de-silice.pt": "3",
+            "jaime-gil-de-biedma/nos-reciben-las-calles-conocidas.pt": "3"
+        }
+    },
+    {
+        "user": "constanza-lopez",
+        "poem": "mario-benedetti/porque-te-tengo-y-no.pt",
+        "labels": {
+            "idea-vilarino/te-estoy-llamando.pt": "3",
+            "idea-vilarino/amor.pt": "3",
+            "mario-benedetti/tus-manos-son-mi-caricia.pt": "3",
+            "juan-cunha/vine-para-decir-tu-primavera.pt": "3",
+            "pedro-lastra/para-verte-mejor-no-necesito.pt": "3",
+            "guillaume-apollinaire/el-puente-mirabeau.pt": "2",
+            "idea-vilarino/si-muriera-esta-noche.pt": "2",
+            "dulce-maria-loynaz/balada-de-amor-tardio.pt": "3",
+            "tristan-tzara/elegia.pt": "3",
+            "juan-cunha/quiero-saber-a-que-ladera.pt": "3"
+        }
+    },
+    {
+        "user": "constanza-lopez",
+        "poem": "walt-whitman/oh-capitan-mi-capitan.pt",
+        "labels": {
+            "herib-campos-cervera/federico-te-he-visto.pt": "3",
+            "alexandr-puchkin/se-apago-el-astro-del-dia.pt": "3",
+            "jose-marti/versos-sencillos-xlv.pt": "3",
+            "concha-urquiza/romance-de-la-lluvia.pt": "2",
+            "salome-urena/angustias.pt": "3",
+            "gabriela-mistral/padre-nuestro-que-estas-en-los-cielos.pt": "2",
+            "gertrudis-gomez-de-avellaneda/al-partir.pt": "3",
+            "concha-urquiza/te-esperare-esta-noche-senor-mio.pt": "3",
+            "jose-marti/versos-sencillos-iii.pt": "1",
+            "emily-bronte/que-claro-ella-brilla.pt": "1"
+        }
+    },
+    {
+        "user": "constanza-lopez",
+        "poem": "julia-de-burgos/poema-de-la-intima-agonia.pt",
+        "labels": {
+            "luis-pales-matos/pueblo-negro.pt": "2",
+            "ricardo-molinari/mi-pasion-tiene-la-forma-de-un-rio-apresado.pt": "3",
+            "alfonso-reyes/morir.pt": "3",
+            "salvador-espriu/pontos.pt": "3",
+            "ricardo-molinari/si-el-olvido-es-agua-y-el-recuerdo-fuego.pt": "2",
+            "franklin-mieses-burgos/cancion-de-la-noche-larga.pt": "2",
+            "virgilio-davila/nostalgia.pt": "1",
+            "claudio-rodriguez/yo-me-pregunto-a-veces-si-la-noche.pt": "3",
+            "vicente-aleixandre/unas-pocas-palabras.pt": "2",
+            "vicente-aleixandre/las-ventanas-abiertas.pt": "1"
+        }
+    }
+]

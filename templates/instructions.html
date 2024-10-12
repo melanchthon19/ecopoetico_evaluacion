@@ -14,7 +14,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -22,20 +22,29 @@
                 </li>
             </ul>
         </div>
-        
+
     </nav>
-    
+
     <div class="container mt-5">
         <h1>Instrucciones</h1>
-        
+
         <p>Bienvenido al sistema de anotación y muchas gracias por ser parte de este estudio.</p>
+        <p>El proceso de anotación está diseñado para completarse en 45 minutos aproximadamente.</p>
+        <p>Todas las anotaciones serán utilizadas de forma anónima.</p>
+        <p>Puedes retirarte de este estudio en el momento que desees.</p>
         <p>En el siguiente video explico cómo utilizar esta plataforma y anotar los poemas.</p>
         <p>Cualquier pregunta, puedes escribirme a daniel.mm91@gmail.com.</p>
-        
+
         <!-- Embed YouTube video (replace with actual link) -->
         <div class="text-center my-4">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/placeholder" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-GMXlMYZaic?si=VfRc60LsYe1TMMxL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p>Si el video no se reproduce, puedes verlo en Youtube <a href="https://www.youtube.com/embed/-GMXlMYZaic?si=VfRc60LsYe1TMMxL" target="_blank">https://www.youtube.com/embed/-GMXlMYZaic?si=VfRc60LsYe1TMMxL</a></p>
         </div>
+
+        <p><b>Criterios de anotación:</b></p>
+        <p>- Considerar el contenido del poema a partir del texto (temática, repeticiones, figuras literarias, estructura, tono... etc).</p>
+        <p>- No utilizar biografía del escritor/a, contexto histórico de producción, nacionalidad, corriente literaria, </p>
+        <p>- No considerar características particulares de potenciales lectores.</p>
 
         <!-- Poemas pendientes de anotación -->
         <h2>Poemas pendientes de anotación</h2>
@@ -60,9 +69,9 @@
         {% else %}
             <p>No has anotado ningún poema aún.</p>
         {% endif %}
-        
+
         <hr>
-        
+
         {% if unannotated_poems %}
             <p>Cuando estés listo, haz clic en el botón de abajo para comenzar a anotar los poemas asignados:</p>
             <div class="text-center mb-5">
