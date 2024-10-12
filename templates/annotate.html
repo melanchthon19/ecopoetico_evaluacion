@@ -11,7 +11,7 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <p><br>Evalúa siguiendo este escenario: <b>Una persona te dice que le gustó el poema de la izquierda, ¿le recomiendas el de la derecha?</b></p>
+        <p><br>Evalúa siguiendo este escenario: <b>ÉcoPoético te recomienda los poemas de la derecha a partir del de la izquierda. ¿Qué tan adecuada es la recomendación?</b></p>
         <div class="collapse navbar-collapse" id="navbarNav">
 
             <!-- Right-side links -->
@@ -52,12 +52,12 @@
                         {% set rec_original_title = title_mapping[rec_formatted_title.replace('.pt', '.txt')] %}
                         <h3>{{ rec_author|replace('-', ' ')|title }} - {{ rec_original_title }}</h3>
                         <pre>{{ rec_text }}</pre>
-                        <label for="{{ rec }}">¿Recomiendo este poema?</label>
+                        <label for="{{ rec }}">La recomendación <b>{{ rec_author|replace('-', ' ')|title }} - {{ rec_original_title }}</b> es</label>
                         <select name="{{ rec }}" id="{{ rec }}">
                             <option value="" disabled selected>Selecciona una opción</option>
-                            <option value="3">Sí lo recomiendo</option>
-                            <option value="2">Neutral/Indiferente</option>
-                            <option value="1">No lo recomendado</option>
+                            <option value="3">adecuada</option>
+                            <option value="2">neutral</option>
+                            <option value="1">inadecuada</option>
                         </select>
                         <hr class="my-4">
                     {% endfor %}
