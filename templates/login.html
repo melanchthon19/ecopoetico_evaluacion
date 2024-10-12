@@ -27,9 +27,8 @@
                 </div>
             {% endif %}
 
-            <form method="POST">
-                {{ csrf_token() }} <!-- Include CSRF token -->
-
+            <form id="login-form" method="POST">
+                <input id="csrf_token" type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                 <div class="form-group">
                     <label for="username">Usuario</label>
                     <input type="text" class="form-control" id="username" name="username" required>
@@ -43,9 +42,20 @@
         </div>
     </div>
 
+    <!-- Move the script here, at the end of the body -->
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            // Log the values when the form is submitted
+            console.log("CSRF Token:", document.getElementById('csrf_token').value);
+            console.log("Username Field:", document.getElementById('username').value);
+            console.log("Password Field:", document.getElementById('password').value);
+        });
+    </script>
+
     <!-- Include Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
+
