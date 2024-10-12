@@ -13,13 +13,16 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <p><br>Evalúa siguiendo este escenario: <b>Una persona te dice que le gustó el poema de la izquierda, ¿le recomiendas el de la derecha?</b></p>
         <div class="collapse navbar-collapse" id="navbarNav">
-            
+
             <!-- Right-side links -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <form method="POST" onsubmit="return validateForm()"> <!-- Attach validation function -->
+                    <!--
+                    <form method="POST">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
                         <button type="submit" class="btn btn-primary nav-link" style="color: white;">Enviar anotaciones</button>
                     </form>
+                    -->
                 </li>
                 <li class="nav-item">
                     <a class="nav-link warning-link" href="{{ url_for('instructions') }}">Instrucciones</a>
@@ -41,22 +44,30 @@
 
         <!-- Panel derecho (poemas recomendados) -->
         <div class="right-panel">
-            <div class="recommendation-container">
-                {% for rec, rec_text in recommendation_texts.items() %}
-                    {% set rec_author, rec_formatted_title = rec.split('/') %}
-                    {% set rec_original_title = title_mapping[rec_formatted_title.replace('.pt', '.txt')] %}
-                    <h3>{{ rec_author|replace('-', ' ')|title }} - {{ rec_original_title }}</h3>
-                    <pre>{{ rec_text }}</pre>
-                    <label for="{{ rec }}">¿Recomiendo este poema?</label>
-                    <select name="{{ rec }}" id="{{ rec }}">
-                        <option value="" disabled selected>Selecciona una opción</option>
-                        <option value="3">Sí lo recomiendo</option>
-                        <option value="2">Neutral/Indiferente</option>
-                        <option value="1">No lo recomendado</option>
-                    </select>
-                    <hr class="my-4">
-                {% endfor %}
-            </div>
+            <form method="POST"> <!-- Form wrapping the recommendations -->
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>  <!-- CSRF Token must be inside this form -->
+                <div class="recommendation-container">
+                    {% for rec, rec_text in recommendation_texts.items() %}
+                        {% set rec_author, rec_formatted_title = rec.split('/') %}
+                        {% set rec_original_title = title_mapping[rec_formatted_title.replace('.pt', '.txt')] %}
+                        <h3>{{ rec_author|replace('-', ' ')|title }} - {{ rec_original_title }}</h3>
+                        <pre>{{ rec_text }}</pre>
+                        <label for="{{ rec }}">¿Recomiendo este poema?</label>
+                        <select name="{{ rec }}" id="{{ rec }}">
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="3">Sí lo recomiendo</option>
+                            <option value="2">Neutral/Indiferente</option>
+                            <option value="1">No lo recomendado</option>
+                        </select>
+                        <hr class="my-4">
+                    {% endfor %}
+                </div>
+
+                <!-- Submit button inside the form -->
+                <div class="submit-button">
+                    <button type="submit" class="btn btn-primary">Enviar anotaciones</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -65,9 +76,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Include the validation JS from static folder -->
+    <!--
     <script src="{{ url_for('static', filename='js/form_validation.js') }}"></script>
     <script src="{{ url_for('static', filename='js/page_warning.js') }}"></script>
+    -->
 
 </body>
 </html>
-

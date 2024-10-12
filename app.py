@@ -16,11 +16,19 @@ app.secret_key = os.getenv("SECRET_KEY", "supersecretkey")
 csrf = CSRFProtect(app)
 csrf.init_app(app)
 
+#app.config['WTF_CSRF_ENABLED'] = False
 app.config['WTF_CSRF_ENABLED'] = True
 app.config['WTF_CSRF_SECRET_KEY'] = os.getenv("CSRF_SECRET_KEY", "anothersecretkey")
 
 # Define the path to your base directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Define the base directory for annotations
+ANNOTATIONS_DIR = os.path.join(BASE_DIR, 'annotations')
+
+# Ensure that the annotations directory exists
+if not os.path.exists(ANNOTATIONS_DIR):
+    os.makedirs(ANNOTATIONS_DIR)
 
 # CSRF Token Logging Function
 @app.before_request
@@ -88,7 +96,6 @@ similarity_matrix = load_similarity_matrix()
 # Helper to load poems
 def get_poem_text(path):
     path = normalize_filename(path)
-    app.logger.info(f"Trying to load poem file from: {path}")
     try:
         with open(path, 'r', encoding='utf-8') as f:
             return f.read()
@@ -96,10 +103,10 @@ def get_poem_text(path):
         app.logger.error(f"Poem file {path} not found")
         return None
 
-# Helper to get annotated poems for a user
+# Update the get_annotated_poems function to use individual files
 def get_annotated_poems(username):
-    user_annotations = [annotation['poem'] for annotation in annotations if annotation['user'] == username]
-    return user_annotations
+    user_annotations = load_user_annotations(username)
+    return [annotation['poem'] for annotation in user_annotations]
 
 # Helper to get assigned poems for a user
 def get_assigned_poems(username):
@@ -126,6 +133,9 @@ def start_annotation():
     assigned_poems = get_assigned_poems(username)
     annotated_poems = get_annotated_poems(username)
 
+    app.logger.info(f"Assigned poems: {assigned_poems}")
+    app.logger.info(f"Annotated poems: {annotated_poems}")
+
     # Find the first unannotated poem in the assigned list
     for poem_key in assigned_poems:
         if poem_key not in annotated_poems:
@@ -135,6 +145,7 @@ def start_annotation():
 
     # If all poems are annotated, return to instructions or display a message
     return redirect(url_for('instructions'))
+
 
 # Home page
 @app.route('/')
@@ -205,53 +216,88 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('home'))
 
-# Annotation page
+# Helper function to get the path for a user's annotations file
+def get_user_annotations_path(username):
+    user_dir = os.path.join(ANNOTATIONS_DIR, username)
+
+    # Create user folder if it doesn't exist
+    if not os.path.exists(user_dir):
+        os.makedirs(user_dir)
+
+    # Define path to the user's JSON file
+    return os.path.join(user_dir, 'annotations.json')
+
+# Load or initialize user annotations from their specific file
+def load_user_annotations(username):
+    user_annotations_path = get_user_annotations_path(username)
+
+    if os.path.exists(user_annotations_path):
+        with open(user_annotations_path) as f:
+            return json.load(f)
+    else:
+        return []
+
+# Save user annotations to their specific file
+def save_user_annotations(username, annotations_data):
+    user_annotations_path = get_user_annotations_path(username)
+
+    with open(user_annotations_path, 'w') as f:
+        json.dump(annotations_data, f, indent=4)
+
+# Load similarity random matrix
+def load_similarity_random_matrix():
+    random_similarity_matrix_path = os.path.join(BASE_DIR, 'similarity_random.csv')
+    try:
+        return pd.read_csv(random_similarity_matrix_path)
+    except FileNotFoundError:
+        app.logger.error(f"{random_similarity_matrix_path} file not found")
+        return pd.DataFrame()
+
+# Load the random similarity matrix globally
+similarity_random_matrix = load_similarity_random_matrix()
+
 @app.route('/annotate/<poem_url>', methods=['GET', 'POST'])
 def annotate(poem_url):
     if 'username' not in session:
         return redirect(url_for('login'))
 
+    username = session['username']
+
+    # Load user-specific annotations
+    user_annotations = load_user_annotations(username)
+
     # Reconstruct the poem_key from the poem_url
     poem_key = poem_url.replace('__', '/') + '.pt'
 
-    # Get annotated poems for this user
-    annotated_poems = get_annotated_poems(session['username'])
-
     # Check if the current poem has already been annotated by this user
-    if poem_key in annotated_poems:
-        return redirect(url_for('instructions'))  # Redirect to instructions if already annotated
+    if poem_key in [annotation['poem'] for annotation in user_annotations]:
+        return redirect(url_for('instructions'))  # Redirect if already annotated
 
-    # Check if the poem is assigned to the user
-    assigned_poems = get_assigned_poems(session['username'])
-    if poem_key not in assigned_poems:
-        return "Error: Poema no asignado a este usuario", 403  # Forbidden
+    # Check if the user is using random recommendations
+    use_random_recommendations = users.get(username, {}).get('use_random_recommendations', False)
 
-    # Split the poem_key into author and formatted title
+    # Load poem text
     author, formatted_title = poem_key.split('/')
-
-    # Format the author name properly (capitalize and replace hyphens with spaces)
     author_formatted = author.replace('-', ' ').title()
-
-    app.logger.info(f"Author: {author_formatted}, Formatted title: {formatted_title}")
-
-    # Remove .pt and replace with .txt
     formatted_title = formatted_title.replace('.pt', '.txt')
-
-    # Look up the corresponding original title using the mapping
     original_title = title_mapping.get(formatted_title)
+
     if not original_title:
         return "Error: Poema no encontrado en el mapeo", 404
 
-    # Construct the path to the original poem file
     poem_path = os.path.join(BASE_DIR, 'corpus', author, f"{original_title}.txt")
     poem_text = get_poem_text(poem_path)
+
     if poem_text is None:
         return f"Error: No se pudo cargar el texto del poema.\npoem_path ={poem_path}", 404
 
-    # Load the top 10 recommended poems' text from similarity matrix
-    recommendations = get_recommendations(poem_key)
-    recommendation_texts = {}
+    # Load recommendations based on whether random ones are needed
+    if use_random_recommendations:
+        recommendations = get_random_recommendations(poem_key)
+    else:
+        recommendations = get_recommendations(poem_key)
 
+    recommendation_texts = {}
     for rec in recommendations:
         rec_author, rec_formatted_title = rec.split('/')
         rec_formatted_title = rec_formatted_title.replace('.pt', '.txt')
@@ -266,7 +312,7 @@ def annotate(poem_url):
 
     if request.method == 'POST':
         labels = {rec: request.form.get(rec) for rec in recommendations}
-        # Ensure all recommendations have a value before submitting
+
         if None in labels.values():
             return render_template(
                 'annotate.html',
@@ -280,27 +326,40 @@ def annotate(poem_url):
                 error="Por favor, selecciona una opción para todos los poemas recomendados."
             )
 
+        # Append the new annotation to the user's file
         annotation = {
-            'user': session['username'],
+            'user': username,
             'poem': poem_key,
             'labels': labels
         }
-        annotations.append(annotation)
-        with open(annotations_file_path, 'w') as f:
-            json.dump(annotations, f, indent=4)
+        user_annotations.append(annotation)
+        save_user_annotations(username, user_annotations)  # Save annotations to user-specific file
+
         return redirect(url_for('annotate', poem_url=poem_url))
 
-    # Render the original poem with its original title and the recommended poems' text
     return render_template(
         'annotate.html',
-        author=author_formatted,  # Pass the formatted author to the template
-        original_title=original_title,  # Pass the formatted title
+        author=author_formatted,
+        original_title=original_title,
         poem_text=poem_text,
         poem=poem_key,
         recommendations=recommendations,
         recommendation_texts=recommendation_texts,
-        title_mapping=title_mapping  # Pass title_mapping to the template
+        title_mapping=title_mapping
     )
+
+# Function to get random recommendations
+def get_random_recommendations(poem_key):
+    try:
+        row = similarity_random_matrix[similarity_random_matrix['poem'] == poem_key]
+        if not row.empty:
+            recommendations = row.iloc[0, 1:11].tolist()  # Get top 10 random recommendations
+            return recommendations
+    except Exception as e:
+        app.logger.error(f"Error fetching random recommendations for {poem_key}: {e}")
+    return []
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
