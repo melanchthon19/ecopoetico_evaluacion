@@ -166,3 +166,4 @@ users.json
 corpus/
 corpus.zip
 .env
+annotations/
